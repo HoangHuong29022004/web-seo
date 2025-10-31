@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 
 export default function MobileMenu() {
@@ -15,13 +15,16 @@ export default function MobileMenu() {
   };
 
   // Prevent body scroll when menu is open
-  if (typeof window !== 'undefined') {
+  React.useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = 'hidden';
     } else {
       document.body.style.overflow = 'unset';
     }
-  }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -58,11 +61,11 @@ export default function MobileMenu() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed top-0 right-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed top-0 right-0 h-screen w-80 max-w-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
-        <div className="flex flex-col h-full">
+        <div className="flex flex-col h-screen">
           {/* Header */}
           <div className="flex items-center justify-between p-6 border-b">
             <Link href="/" onClick={closeMenu} className="text-2xl font-bold text-blue-600">
@@ -77,8 +80,8 @@ export default function MobileMenu() {
           </div>
 
           {/* Navigation Links */}
-          <nav className="flex-1 overflow-y-auto py-6">
-            <div className="space-y-1 px-4">
+          <div className="flex-1 overflow-y-auto overscroll-contain">
+            <div className="py-6 space-y-1 px-4">
               <Link
                 href="/"
                 onClick={closeMenu}
@@ -162,7 +165,7 @@ export default function MobileMenu() {
                 🚗 Đặt Lái Thử
               </a>
             </div>
-          </nav>
+          </div>
 
           {/* Footer */}
           <div className="p-6 border-t bg-gray-50">
