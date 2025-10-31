@@ -61,7 +61,7 @@ export default function MobileMenu() {
 
       {/* Mobile Menu Drawer */}
       <div
-        className={`fixed top-0 right-0 h-screen w-80 max-w-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`fixed top-0 right-0 h-screen w-80 max-w-full bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out md:hidden ${
           isOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
@@ -89,6 +89,24 @@ export default function MobileMenu() {
               >
                 <span className="mr-3">🏠</span>
                 Trang chủ
+              </Link>
+              
+              <Link
+                href="/danh-sach-xe"
+                onClick={closeMenu}
+                className="block px-4 py-3 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium"
+              >
+                <span className="mr-3">🚙</span>
+                Danh sách xe
+              </Link>
+              
+              <Link
+                href="/tin-tuc"
+                onClick={closeMenu}
+                className="block px-4 py-3 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium"
+              >
+                <span className="mr-3">📰</span>
+                Tin tức
               </Link>
               
               <Link

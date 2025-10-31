@@ -85,10 +85,10 @@ export default function RootLayout({
             {/* Desktop Navigation */}
             <div className="hidden md:flex gap-4 lg:gap-6 text-sm lg:text-base">
               <a href="/" className="hover:text-blue-600 transition-colors font-medium">Trang chủ</a>
-              <a href="/gioi-thieu" className="hover:text-blue-600 transition-colors font-medium">Giới thiệu</a>
+              <a href="/danh-sach-xe" className="hover:text-blue-600 transition-colors font-medium">Danh sách xe</a>
+              <a href="/tin-tuc" className="hover:text-blue-600 transition-colors font-medium">Tin tức</a>
               <a href="/so-sanh-xe" className="hover:text-blue-600 transition-colors font-medium">So sánh</a>
               <a href="/tra-gop" className="hover:text-blue-600 transition-colors font-medium">Trả góp</a>
-              <a href="/dat-lai-thu" className="hover:text-blue-600 transition-colors font-medium">Lái thử</a>
               <a href="/lien-he" className="hover:text-blue-600 transition-colors font-medium">Liên hệ</a>
             </div>
 

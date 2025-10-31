@@ -17,6 +17,8 @@ export interface Car {
   color: string;
   engineCapacity: string;
   bodyType: string;
+  interior?: string; // Nội thất: da, vải, da lộn
+  seats?: number; // Số chỗ ngồi
 }
 
 export const cars: Car[] = [
@@ -56,7 +58,9 @@ export const cars: Car[] = [
     location: 'TP. Hồ Chí Minh',
     color: 'Đỏ',
     engineCapacity: '1.5L',
-    bodyType: 'Sedan'
+    bodyType: 'Sedan',
+    interior: 'Da',
+    seats: 5
   },
   {
     id: '2',
@@ -93,7 +97,9 @@ export const cars: Car[] = [
     location: 'Hà Nội',
     color: 'Trắng Ngọc Trai',
     engineCapacity: '1.5L',
-    bodyType: 'Sedan'
+    bodyType: 'Sedan',
+    interior: 'Vải cao cấp',
+    seats: 5
   },
   {
     id: '3',
@@ -131,7 +137,9 @@ export const cars: Car[] = [
     location: 'Đà Nẵng',
     color: 'Đỏ Soul',
     engineCapacity: '2.0L',
-    bodyType: 'SUV'
+    bodyType: 'SUV',
+    interior: 'Da cao cấp',
+    seats: 5
   },
   {
     id: '4',
@@ -168,7 +176,9 @@ export const cars: Car[] = [
     location: 'TP. Hồ Chí Minh',
     color: 'Xanh Dương',
     engineCapacity: '2.0L',
-    bodyType: 'SUV'
+    bodyType: 'SUV',
+    interior: 'Da',
+    seats: 5
   },
   {
     id: '5',
@@ -206,7 +216,9 @@ export const cars: Car[] = [
     location: 'Hà Nội',
     color: 'Xám',
     engineCapacity: '2.0L',
-    bodyType: 'Bán tải'
+    bodyType: 'Bán tải',
+    interior: 'Da lộn',
+    seats: 5
   },
   {
     id: '6',
@@ -243,7 +255,9 @@ export const cars: Car[] = [
     location: 'Cần Thơ',
     color: 'Đen',
     engineCapacity: '1.5L',
-    bodyType: 'SUV'
+    bodyType: 'SUV',
+    interior: 'Da',
+    seats: 5
   },
   {
     id: '7',
@@ -281,7 +295,9 @@ export const cars: Car[] = [
     location: 'TP. Hồ Chí Minh',
     color: 'Trắng',
     engineCapacity: '1.5L',
-    bodyType: 'MPV'
+    bodyType: 'MPV',
+    interior: 'Vải',
+    seats: 7
   },
   {
     id: '8',
@@ -318,7 +334,9 @@ export const cars: Car[] = [
     location: 'Hà Nội',
     color: 'Xanh Ocean',
     engineCapacity: 'Điện',
-    bodyType: 'SUV'
+    bodyType: 'SUV',
+    interior: 'Da Nappa',
+    seats: 5
   }
 ];
 
@@ -326,11 +344,12 @@ export function getCarBySlug(slug: string): Car | undefined {
   return cars.find(car => car.slug === slug);
 }
 
+export function getAllBrands(): string[] {
+  return Array.from(new Set(cars.map(car => car.brand)));
+}
+
 export function getCarsByBrand(brand: string): Car[] {
   return cars.filter(car => car.brand === brand);
 }
 
-export function getAllBrands(): string[] {
-  return Array.from(new Set(cars.map(car => car.brand)));
-}
 

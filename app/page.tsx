@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import CarCard from '@/components/CarCard';
+import HeroBanner from '@/components/HeroBanner';
 import { cars, getAllBrands } from '@/lib/data/cars';
 
 export const metadata: Metadata = {
