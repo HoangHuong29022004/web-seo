@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import MobileMenu from "@/components/MobileMenu";
 
 const inter = Inter({ 
   subsets: ["latin", "vietnamese"],
@@ -80,14 +81,19 @@ export default function RootLayout({
             <a href="/" className="text-2xl font-bold text-blue-600 flex items-center gap-2">
               🚗 <span className="hidden sm:inline">AutoSale</span>
             </a>
-            <div className="flex gap-4 md:gap-6 text-sm md:text-base">
+            
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex gap-4 lg:gap-6 text-sm lg:text-base">
               <a href="/" className="hover:text-blue-600 transition-colors font-medium">Trang chủ</a>
-              <a href="/gioi-thieu" className="hover:text-blue-600 transition-colors font-medium hidden sm:inline">Giới thiệu</a>
+              <a href="/gioi-thieu" className="hover:text-blue-600 transition-colors font-medium">Giới thiệu</a>
               <a href="/so-sanh-xe" className="hover:text-blue-600 transition-colors font-medium">So sánh</a>
-              <a href="/tra-gop" className="hover:text-blue-600 transition-colors font-medium hidden md:inline">Trả góp</a>
-              <a href="/dat-lai-thu" className="hover:text-blue-600 transition-colors font-medium hidden lg:inline">Lái thử</a>
+              <a href="/tra-gop" className="hover:text-blue-600 transition-colors font-medium">Trả góp</a>
+              <a href="/dat-lai-thu" className="hover:text-blue-600 transition-colors font-medium">Lái thử</a>
               <a href="/lien-he" className="hover:text-blue-600 transition-colors font-medium">Liên hệ</a>
             </div>
+
+            {/* Mobile Menu */}
+            <MobileMenu />
           </nav>
         </header>
         <main className="min-h-screen">
