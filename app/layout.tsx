@@ -77,13 +77,16 @@ export default function RootLayout({
       <body className={`${inter.className} antialiased`}>
         <header className="sticky top-0 z-50 w-full border-b bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/60">
           <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
-            <a href="/" className="text-2xl font-bold text-blue-600">
-              🚗 AutoSale
+            <a href="/" className="text-2xl font-bold text-blue-600 flex items-center gap-2">
+              🚗 <span className="hidden sm:inline">AutoSale</span>
             </a>
-            <div className="flex gap-6">
-              <a href="/" className="hover:text-blue-600 transition-colors">Trang chủ</a>
-              <a href="#brands" className="hover:text-blue-600 transition-colors">Hãng xe</a>
-              <a href="#contact" className="hover:text-blue-600 transition-colors">Liên hệ</a>
+            <div className="flex gap-4 md:gap-6 text-sm md:text-base">
+              <a href="/" className="hover:text-blue-600 transition-colors font-medium">Trang chủ</a>
+              <a href="/gioi-thieu" className="hover:text-blue-600 transition-colors font-medium hidden sm:inline">Giới thiệu</a>
+              <a href="/so-sanh-xe" className="hover:text-blue-600 transition-colors font-medium">So sánh</a>
+              <a href="/tra-gop" className="hover:text-blue-600 transition-colors font-medium hidden md:inline">Trả góp</a>
+              <a href="/dat-lai-thu" className="hover:text-blue-600 transition-colors font-medium hidden lg:inline">Lái thử</a>
+              <a href="/lien-he" className="hover:text-blue-600 transition-colors font-medium">Liên hệ</a>
             </div>
           </nav>
         </header>
@@ -95,37 +98,58 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
               <div>
                 <h3 className="text-xl font-bold mb-4">🚗 AutoSale</h3>
-                <p className="text-gray-400">Mua bán xe ô tô uy tín, giá tốt nhất thị trường.</p>
+                <p className="text-gray-400 mb-4">Mua bán xe ô tô uy tín, giá tốt nhất thị trường.</p>
+                <div className="flex gap-3">
+                  <a href="#" className="text-2xl hover:text-blue-400">📘</a>
+                  <a href="#" className="text-2xl hover:text-blue-400">📸</a>
+                  <a href="#" className="text-2xl hover:text-blue-400">🎥</a>
+                </div>
               </div>
               <div>
                 <h4 className="font-semibold mb-4">Sản phẩm</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><a href="/" className="hover:text-white">Xe mới</a></li>
-                  <li><a href="/" className="hover:text-white">Xe đã qua sử dụng</a></li>
-                  <li><a href="/" className="hover:text-white">SUV</a></li>
-                  <li><a href="/" className="hover:text-white">Sedan</a></li>
+                  <li><a href="/" className="hover:text-white transition-colors">Xe mới</a></li>
+                  <li><a href="/" className="hover:text-white transition-colors">Xe đã qua sử dụng</a></li>
+                  <li><a href="/so-sanh-xe" className="hover:text-white transition-colors">So sánh xe</a></li>
+                  <li><a href="/dat-lai-thu" className="hover:text-white transition-colors">Đặt lái thử</a></li>
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Hỗ trợ</h4>
+                <h4 className="font-semibold mb-4">Dịch vụ</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><a href="#" className="hover:text-white">Tư vấn mua xe</a></li>
-                  <li><a href="#" className="hover:text-white">Trả góp</a></li>
-                  <li><a href="#" className="hover:text-white">Bảo hành</a></li>
-                  <li><a href="#" className="hover:text-white">Liên hệ</a></li>
+                  <li><a href="/tra-gop" className="hover:text-white transition-colors">Trả góp 0%</a></li>
+                  <li><a href="/he-thong-phan-phoi" className="hover:text-white transition-colors">Hệ thống showroom</a></li>
+                  <li><a href="/gioi-thieu" className="hover:text-white transition-colors">Về chúng tôi</a></li>
+                  <li><a href="/lien-he" className="hover:text-white transition-colors">Liên hệ</a></li>
                 </ul>
               </div>
               <div>
                 <h4 className="font-semibold mb-4">Liên hệ</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li>📞 Hotline: 1900-xxxx</li>
-                  <li>📧 Email: contact@autosale.vn</li>
-                  <li>📍 TP. Hồ Chí Minh</li>
+                  <li>📞 Hotline: <a href="tel:1900xxxx" className="hover:text-white">1900-xxxx</a></li>
+                  <li>📧 Email: <a href="mailto:contact@autosale.vn" className="hover:text-white">contact@autosale.vn</a></li>
+                  <li>📍 TP. Hồ Chí Minh, Hà Nội</li>
+                  <li className="pt-2">
+                    <a href="/he-thong-phan-phoi" className="text-blue-400 hover:text-blue-300">
+                      Xem tất cả showroom →
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>
-            <div className="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400">
-              <p>&copy; 2024 AutoSale. Bản quyền thuộc về AutoSale.</p>
+            <div className="mt-8 pt-8 border-t border-gray-800">
+              <div className="text-center text-gray-400 mb-4">
+                <div className="flex flex-wrap justify-center gap-4 text-sm mb-4">
+                  <a href="/gioi-thieu" className="hover:text-white">Về chúng tôi</a>
+                  <span>•</span>
+                  <a href="/lien-he" className="hover:text-white">Liên hệ</a>
+                  <span>•</span>
+                  <a href="#" className="hover:text-white">Điều khoản</a>
+                  <span>•</span>
+                  <a href="#" className="hover:text-white">Chính sách bảo mật</a>
+                </div>
+                <p>&copy; 2024 AutoSale. Bản quyền thuộc về AutoSale.</p>
+              </div>
             </div>
           </div>
         </footer>

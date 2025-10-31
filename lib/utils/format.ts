@@ -2,7 +2,7 @@ export function formatPrice(price: number): string {
   return new Intl.NumberFormat('vi-VN', {
     style: 'currency',
     currency: 'VND'
-  }).replace(/\s/g, ' ');
+  }).format(price);
 }
 
 export function formatNumber(num: number): string {

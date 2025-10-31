@@ -1,6 +1,7 @@
 {
-  "name": "web-seo",
-  "version": "0.1.0",
+  "name": "autosale-web",
+  "version": "1.0.0",
+  "description": "Website bán xe ô tô với SEO tối ưu - Next.js 16 + TypeScript + Tailwind CSS",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -8,6 +9,17 @@
     "start": "next start",
     "lint": "eslint"
   },
+  "keywords": [
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "seo",
+    "car-sales",
+    "automotive",
+    "ecommerce"
+  ],
+  "author": "AutoSale",
   "dependencies": {
     "react": "19.2.0",
     "react-dom": "19.2.0",
