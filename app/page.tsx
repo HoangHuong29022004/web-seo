@@ -28,7 +28,7 @@ export default function Home() {
               Tìm Xe Ô Tô<br />
               <span className="text-yellow-400">Giá Tốt Nhất 2024</span>
             </h1>
-            <p className="text-xl mb-8 text-blue-100">
+            <p className="text-xl mb-8 text-white opacity-90">
               Hơn 1000+ xe mới và đã qua sử dụng từ các hãng uy tín. 
               Hỗ trợ trả góp 0%, bảo hành chính hãng, giao xe tận nhà.
             </p>
@@ -155,28 +155,28 @@ export default function Home() {
             <div className="text-center">
               <div className="text-5xl mb-4">✓</div>
               <h3 className="text-xl font-bold mb-2">Uy Tín</h3>
-              <p className="text-blue-100">
+              <p className="text-white opacity-90">
                 Đảm bảo nguồn gốc xuất xứ, chất lượng xe
               </p>
             </div>
             <div className="text-center">
               <div className="text-5xl mb-4">💰</div>
               <h3 className="text-xl font-bold mb-2">Giá Tốt</h3>
-              <p className="text-blue-100">
+              <p className="text-white opacity-90">
                 Cam kết giá tốt nhất thị trường
               </p>
             </div>
             <div className="text-center">
               <div className="text-5xl mb-4">🔧</div>
               <h3 className="text-xl font-bold mb-2">Bảo Hành</h3>
-              <p className="text-blue-100">
+              <p className="text-white opacity-90">
                 Bảo hành chính hãng, hỗ trợ 24/7
               </p>
             </div>
             <div className="text-center">
               <div className="text-5xl mb-4">🚚</div>
               <h3 className="text-xl font-bold mb-2">Giao Xe</h3>
-              <p className="text-blue-100">
+              <p className="text-white opacity-90">
                 Giao xe tận nhà toàn quốc
               </p>
             </div>

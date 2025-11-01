@@ -17,12 +17,12 @@ export default function CarCard({ car }: CarCardProps) {
       <article className="group bg-white rounded-xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden h-full flex flex-col">
         <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
           {car.condition === 'new' && (
-            <div className="absolute top-3 left-3 z-10 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="absolute top-3 left-3 z-10 bg-green-700 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
               Mới 100%
             </div>
           )}
           {discount > 0 && (
-            <div className="absolute top-3 right-3 z-10 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="absolute top-3 right-3 z-10 bg-red-700 text-white px-3 py-1 rounded-full text-sm font-semibold shadow-md">
               -{discount}%
             </div>
           )}
@@ -52,7 +52,7 @@ export default function CarCard({ car }: CarCardProps) {
               {formatPrice(car.price)}
             </span>
             {car.originalPrice && (
-              <span className="text-sm text-gray-400 line-through">
+              <span className="text-sm text-gray-500 line-through">
                 {formatPrice(car.originalPrice)}
               </span>
             )}

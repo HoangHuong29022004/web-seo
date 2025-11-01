@@ -37,12 +37,12 @@ export default function ImageGallery({ images, carName, condition, discount }: I
           onClick={() => setIsLightboxOpen(true)}
         >
           {condition === 'new' && (
-            <div className="absolute top-4 left-4 z-10 bg-green-500 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg">
+            <div className="absolute top-4 left-4 z-10 bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg">
               🆕 Xe Mới 100%
             </div>
           )}
           {discount && discount > 0 && (
-            <div className="absolute top-4 right-4 z-10 bg-red-500 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg">
+            <div className="absolute top-4 right-4 z-10 bg-red-700 text-white px-4 py-2 rounded-lg text-sm font-bold shadow-lg">
               Giảm {discount}%
             </div>
           )}

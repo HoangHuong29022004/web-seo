@@ -1,188 +1,300 @@
-# 🚗 AutoSale - Website Bán Xe Ô Tô với SEO Tối Ưu
+# 🚗 AutoSale - Website Bán Xe Ô Tô
 
-Website bán xe ô tô được xây dựng với **Next.js 14+**, **TypeScript**, và **Tailwind CSS**. Tối ưu hoàn toàn cho SEO với mục tiêu đạt 90+ điểm trên tất cả các chỉ số Lighthouse.
+Website bán xe ô tô hiện đại với **Next.js 16**, **TypeScript**, và **Tailwind CSS**. Tối ưu hoàn toàn cho **Performance** và **SEO**.
 
-## ✨ Tính Năng
+---
 
-- ⚡ **Performance cao**: SSR/SSG, Image Optimization, Code Splitting
-- 🎯 **SEO tối ưu**: Meta tags, JSON-LD, Sitemap, Robots.txt
-- 📱 **Responsive**: Hiển thị hoàn hảo trên mọi thiết bị
-- 🎨 **UI/UX hiện đại**: Thiết kế đẹp mắt với Tailwind CSS
-- 🔍 **Structured Data**: JSON-LD cho Product, Organization, Breadcrumb
-- 🖼️ **Image Optimization**: Next.js Image với AVIF, WebP
-- 📊 **Core Web Vitals**: Tối ưu LCP, FID, CLS
+## ⚡ Quick Start
 
-## 🛠️ Tech Stack
-
-- **Framework**: Next.js 16.0.1 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS 4
-- **Fonts**: Next.js Font Optimization (Inter)
-- **Images**: Next.js Image Component
-
-## 📦 Cài Đặt
-
-\`\`\`bash
-# Clone repository hoặc cd vào thư mục
-cd /opt/homebrew/var/www/web-seo
-
-# Cài đặt dependencies (đã cài rồi)
+```bash
+# Cài đặt dependencies
 npm install
 
 # Chạy development server
 npm run dev
-\`\`\`
 
-Mở trình duyệt và truy cập [http://localhost:3000](http://localhost:3000)
-
-## 🚀 Build & Deploy
-
-\`\`\`bash
-# Build production
+# Build for production
 npm run build
-
-# Start production server
 npm start
-\`\`\`
+```
 
-## 📁 Cấu Trúc Thư Mục
+Mở [http://localhost:3000](http://localhost:3000)
 
-\`\`\`
+---
+
+## 🎯 Tính Năng Nổi Bật
+
+### 🌐 Client-Only App
+- **Public Website** - Không có admin panel
+- **Read-Only APIs** - GET endpoints cho data
+- **Contact Form** - POST endpoint cho liên hệ
+- **Static Data** - Quản lý data qua code
+
+### ⚡ Performance Optimization
+- **React Server Components** - Giảm 70-80% JavaScript bundle
+- **Next.js Image Optimization** - AVIF/WebP, lazy loading
+- **ISR Caching** - Static với auto-revalidate
+- **Code Splitting** - Dynamic imports cho components
+
+### 🔍 SEO Optimization
+- **Meta Tags** - Title, Description, Keywords, OG tags
+- **JSON-LD Structured Data** - Product, Breadcrumb, Organization
+- **Dynamic Sitemap** - Auto-generated từ data
+- **Robots.txt** - SEO-friendly configuration
+
+### 🛠️ Developer Experience
+- **TypeScript** - Type safety toàn project
+- **API Client** - Centralized HTTP client (no duplicate code)
+- **Custom Hooks** - Reusable logic
+- **State Management** - Zustand (optional)
+
+---
+
+## 📦 Tech Stack
+
+| Category | Technology |
+|----------|------------|
+| **Framework** | Next.js 16.0.1 (App Router) |
+| **Language** | TypeScript 5+ |
+| **Styling** | Tailwind CSS 4 |
+| **Performance** | React Server Components, ISR |
+| **SEO** | Metadata API, JSON-LD, Sitemap |
+
+---
+
+## 📁 Cấu Trúc Project
+
+```
 web-seo/
-├── app/
-│   ├── layout.tsx          # Root layout với SEO meta tags
-│   ├── page.tsx            # Trang chủ
-│   ├── globals.css         # Global styles
-│   ├── robots.ts           # Robots.txt generator
-│   ├── sitemap.ts          # Sitemap.xml generator
-│   └── xe/
-│       └── [slug]/
-│           ├── page.tsx    # Chi tiết sản phẩm (dynamic route)
-│           └── not-found.tsx
-├── components/
-│   └── CarCard.tsx         # Component card hiển thị xe
+├── app/                    # Next.js App Router
+│   ├── api/               # API Routes (REST endpoints)
+│   ├── xe/[slug]/         # Dynamic car pages
+│   └── page.tsx           # Homepage
+│
+├── components/            # React components
+│   ├── CarCard.tsx
+│   ├── ImageGallery.tsx
+│   └── MobileMenu.tsx
+│
 ├── lib/
-│   ├── data/
-│   │   └── cars.ts         # Mock data xe (8 sản phẩm)
-│   └── utils/
-│       └── format.ts       # Utility functions
-├── public/
-│   └── manifest.json       # PWA manifest
-└── next.config.ts          # Next.js configuration
-\`\`\`
+│   ├── api-client.ts     # 🆕 HTTP client wrapper
+│   ├── services/         # 🆕 API service functions
+│   ├── data/             # Static data
+│   └── utils/            # Utility functions
+│
+├── hooks/                # 🆕 Custom React hooks
+│   ├── useDebounce.ts
+│   ├── useLocalStorage.ts
+│   └── useIntersectionObserver.ts
+│
+├── types/                # 🆕 TypeScript type definitions
+│   ├── car.ts
+│   ├── api.ts
+│   └── form.ts
+│
+├── store/                # 🆕 State management (Zustand)
+│   ├── useCarStore.ts
+│   └── useFavoriteStore.ts
+│
+├── constants/            # 🆕 Constants & configs
+│   ├── routes.ts
+│   ├── messages.ts
+│   └── car.ts
+│
+└── config/               # 🆕 App configuration
+    ├── site.config.ts
+    └── env.config.ts
+```
 
-## 🎯 SEO Features
+---
 
-### 1. **Meta Tags**
-- Title, Description, Keywords
-- Open Graph (Facebook)
-- Twitter Cards
-- Canonical URLs
+## 📚 Documentation
 
-### 2. **Structured Data (JSON-LD)**
-- Product Schema
-- Organization Schema
-- Breadcrumb Schema
-- AggregateRating Schema
+### Core Guides
+- 📌 [**Client-Only App**](./CLIENT_ONLY.md) - ⭐ Quan trọng: Không có admin panel
+- 📚 [**Libraries Guide**](./LIBRARIES_GUIDE.md) - 🆕 Zustand, React Query, Bundle Analyzer
+- 📖 [**Project Structure**](./PROJECT_STRUCTURE.md) - Chi tiết cấu trúc project
+- ⚡ [**Performance Guide**](./PERFORMANCE_GUIDE.md) - Hướng dẫn tối ưu performance
+- 🔌 [**API Client**](./lib/API_CLIENT.md) - Sử dụng HTTP client
 
-### 3. **Technical SEO**
-- Sitemap.xml tự động
-- Robots.txt
-- Semantic HTML
-- Alt text cho images
-- Responsive images
+### Quick Links
+- [API Routes](./app/api/) - REST API endpoints
+- [Services](./lib/services/) - API service functions
+- [Hooks](./hooks/) - Custom React hooks
+- [Types](./types/) - TypeScript definitions
 
-### 4. **Performance**
-- Image optimization (AVIF, WebP)
-- Font optimization
-- Code splitting
-- Lazy loading
-- Static Generation
+---
 
-## 📊 Lighthouse Scores Target
+## 🚀 Features Overview
 
-Mục tiêu: **90+ điểm** trên tất cả:
-- ⚡ Performance: 90+
-- ♿ Accessibility: 90+
-- 🎯 Best Practices: 90+
-- 🔍 SEO: 90+
+### 1️⃣ Read-Only APIs
 
-## 🔧 Tùy Chỉnh
+**Available endpoints:**
+```typescript
+// GET - Lấy danh sách xe
+GET /api/cars?brand=Honda&page=1
 
-### Thay đổi domain
-Tìm và thay thế `https://your-domain.com` trong các file:
-- `app/layout.tsx`
-- `app/sitemap.ts`
-- `app/robots.ts`
-- `app/xe/[slug]/page.tsx`
+// GET - Chi tiết xe
+GET /api/cars/:id
 
-### Thêm sản phẩm
-Chỉnh sửa file `lib/data/cars.ts` để thêm/sửa/xóa sản phẩm xe.
+// GET - Tìm kiếm
+GET /api/search?q=Honda City
 
-### Thay đổi màu sắc
-Chỉnh sửa Tailwind CSS trong các component hoặc `globals.css`.
+// POST - Form liên hệ
+POST /api/contact
+```
 
-## 📝 Checklist Trước Khi Deploy
+**Usage:**
+```typescript
+import { getCars, getCarById } from '@/lib/services/carService';
 
-- [ ] Thay đổi domain từ `your-domain.com` sang domain thật
-- [ ] Thêm Google Analytics tracking code
-- [ ] Thêm Google Search Console verification
-- [ ] Cập nhật số điện thoại, email liên hệ
-- [ ] Tạo logo và favicon thực tế
-- [ ] Thay thế images từ Unsplash bằng ảnh thật
-- [ ] Test Lighthouse scores
-- [ ] Submit sitemap lên Google Search Console
-- [ ] Setup SSL certificate (HTTPS)
+const cars = await getCars({ brand: 'Honda' });
+const car = await getCarById('1');
+```
+
+### 2️⃣ Custom Hooks
+
+```typescript
+// Debounce search
+const debouncedQuery = useDebounce(searchTerm, 500);
+
+// Lazy loading
+const [ref, isVisible] = useIntersectionObserver();
+
+// LocalStorage persist
+const [favorites, setFavorites] = useLocalStorage('favorites', []);
+```
+
+### 3️⃣ Type Safety
+
+```typescript
+// Type-safe API calls
+const response = await getCars({ brand: 'Honda', page: 1 });
+const cars: Car[] = response.data; // Fully typed
+```
+
+---
+
+## 🎯 Performance Targets
+
+| Metric | Target | Impact |
+|--------|--------|--------|
+| **Lighthouse Score** | 95-100 | ⭐⭐⭐⭐⭐ |
+| **First Contentful Paint** | < 1.5s | ⭐⭐⭐⭐⭐ |
+| **Largest Contentful Paint** | < 2.5s | ⭐⭐⭐⭐⭐ |
+| **Time to Interactive** | < 3.5s | ⭐⭐⭐⭐ |
+| **Bundle Size** | < 200KB | ⭐⭐⭐⭐ |
+
+---
+
+## 🔧 Configuration
+
+### Environment Variables
+
+Create `.env.local`:
+
+```bash
+# Site
+NEXT_PUBLIC_SITE_URL=https://your-domain.com
+NEXT_PUBLIC_API_URL=https://your-domain.com
+
+# Analytics (Optional)
+NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
+NEXT_PUBLIC_FB_PIXEL_ID=123456789
+
+# Google Maps (Optional)
+NEXT_PUBLIC_GOOGLE_MAPS_KEY=AIzaSy...
+```
+
+### Installed Libraries
+
+```json
+{
+  "zustand": "^5.0.2",              // State Management
+  "@tanstack/react-query": "^5.62.11", // Data Fetching & Caching
+  "@next/bundle-analyzer": "^15.1.4"   // Bundle Analysis
+}
+```
+
+📚 **[Xem hướng dẫn sử dụng →](./LIBRARIES_GUIDE.md)**
+
+---
+
+## 📊 SEO Checklist
+
+- [x] Meta tags (Title, Description, Keywords)
+- [x] Open Graph tags
+- [x] Twitter Cards
+- [x] JSON-LD structured data
+- [x] Dynamic sitemap.xml
+- [x] Robots.txt
+- [x] Canonical URLs
+- [x] Alt text cho images
+- [x] Responsive images
+- [x] Lazy loading
+- [x] Core Web Vitals optimization
+
+---
 
 ## 🌐 Deploy
 
 ### Vercel (Recommended)
-\`\`\`bash
-npm install -g vercel
+```bash
 vercel
-\`\`\`
+```
 
-### Netlify
-\`\`\`bash
+### Build & Start
+```bash
 npm run build
-# Deploy folder .next
-\`\`\`
+npm start
+```
 
 ### Docker
-\`\`\`bash
+```bash
 docker build -t autosale .
 docker run -p 3000:3000 autosale
-\`\`\`
+```
 
-## 📈 SEO Tips
-
-1. **Content**: Viết mô tả chi tiết, unique cho mỗi sản phẩm
-2. **Keywords**: Sử dụng từ khóa tự nhiên trong nội dung
-3. **Images**: Đặt tên file ảnh có ý nghĩa, thêm alt text
-4. **Internal Links**: Liên kết giữa các trang sản phẩm
-5. **Loading Speed**: Giữ thời gian tải < 3 giây
-6. **Mobile First**: Đảm bảo mobile experience tốt
-7. **Schema Markup**: Đã tích hợp JSON-LD đầy đủ
-8. **Social Sharing**: Open Graph tags đã được setup
+---
 
 ## 🐛 Troubleshooting
 
-### Lỗi build
-\`\`\`bash
+### Clear cache & rebuild
+```bash
 rm -rf .next node_modules
 npm install
 npm run build
-\`\`\`
+```
 
-### Lỗi TypeScript
-\`\`\`bash
+### Check linter errors
+```bash
 npm run lint
-\`\`\`
+```
 
-## 📞 Support
+---
 
-- Email: contact@autosale.vn
-- Phone: 1900-xxxx
+## 📈 What's Next?
+
+1. **Add Database** - Connect với PostgreSQL/MongoDB
+2. **Authentication** - NextAuth.js cho admin
+3. **CMS Integration** - Headless CMS cho content
+4. **Payment Gateway** - Stripe/VNPay integration
+5. **Analytics** - Google Analytics, Vercel Analytics
+
+---
+
+## 🤝 Contributing
+
+Khi thêm feature mới:
+
+1. ✅ Tạo types trong `/types`
+2. ✅ Tạo API route trong `/app/api`
+3. ✅ Tạo service trong `/lib/services`
+4. ✅ Sử dụng `apiClient` cho HTTP calls
+5. ✅ Tạo custom hooks nếu cần
+6. ✅ Update documentation
+
+---
 
 ## 📄 License
 
@@ -190,4 +302,6 @@ MIT License - Tự do sử dụng cho mục đích thương mại và cá nhân.
 
 ---
 
-**Made with ❤️ using Next.js + TypeScript + Tailwind CSS**
+**Made with ❤️ by Next.js 16 + TypeScript + Performance Best Practices**
+
+**Lighthouse Score Target: 95-100** ⚡🚀

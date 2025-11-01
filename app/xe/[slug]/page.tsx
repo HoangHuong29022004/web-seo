@@ -322,10 +322,10 @@ export default async function CarDetailPage({ params }: PageProps) {
                     </div>
                     {car.originalPrice && (
                       <div className="flex items-center gap-2">
-                        <span className="text-lg text-gray-400 line-through">
+                        <span className="text-lg text-gray-500 line-through">
                           {formatPrice(car.originalPrice)}
                         </span>
-                        <span className="bg-red-100 text-red-600 text-sm font-semibold px-2 py-1 rounded">
+                        <span className="bg-red-100 text-red-700 text-sm font-semibold px-2 py-1 rounded">
                           Tiết kiệm {formatPrice(car.originalPrice - car.price)}
                         </span>
                       </div>
